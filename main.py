@@ -8,7 +8,7 @@ screen_width, screen_height = 600,500
 
 Grid = (24,20)
 SizeSquares = 25
-numBombs = 40
+numBombs = 99
 
 sizeFont = 25
 font = pygame.font.Font('Freshman.ttf', sizeFont)
@@ -29,11 +29,15 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
+        elif event.type == pygame.MOUSEBUTTONDOWN:
             x, y = pygame.mouse.get_pos()
             if event.button == 1:
                 Campo.clickEsquerdo(x,y)
             elif event.button == 3:
                 Campo.clickDireito(x,y)
+
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_r:
+                Campo = elements.Campo(screen, Grid, SizeSquares, numBombs, font)
 
     pygame.display.update()

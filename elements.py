@@ -17,8 +17,6 @@ class Campo():
         self.countBandeiras = self.numBombs
         self.bombsList = []
 
-        print(self.countSquares)
-
         self.bomb_image = pygame.image.load("imgs/bomba.png").convert_alpha()
         self.bomb_image = pygame.transform.scale(self.bomb_image, (self.sizeSquares, self.sizeSquares))
 
@@ -56,8 +54,6 @@ class Campo():
                 self.matriz[i][j].changeQuadrado(self.colorsGrid)
                 self.auxMatriz[i][j] = 1
                 self.countSquares -= 1
-
-            print(self.countSquares)
 
             if self.countSquares == self.numBombs:
                 self.win()
